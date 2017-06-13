@@ -35,14 +35,14 @@ public class GetPostsServlet extends HttpServlet {
 	  }
 
 	  public String LoadPost(String id)throws SQLException{
-	  	String conteudo="<html><head><link rel='stylesheet'type='text/css' href='../netflix/CSS/posts.css'/></head><body>";
+	  	String conteudo="<html><head><link rel='stylesheet'type='text/css' href='/CSS/posts.css'/></head><body>";
 	  	ConexaoJDBC conexaojdbc = new ConexaoJDBC();
 		Connection conexao = null;
 		try{
 			conexao = conexaojdbc.ConectaBD();
 			String sql = "SELECT * FROM posts WHERE id = ?";
 			PreparedStatement preparedstatement = conexao.prepareStatement(sql);
-	        preparedstatement.setString(1,id);
+	        preparedstatement.setInt(1,Integer.paseInt(id));
 		    ResultSet result = preparedstatement.executeQuery();
 	    	
 	    	if(result.next()){
