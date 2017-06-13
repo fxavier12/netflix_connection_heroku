@@ -42,7 +42,7 @@ public class GetPostsServlet extends HttpServlet {
 			conexao = conexaojdbc.ConectaBD();
 			String sql = "SELECT * FROM posts WHERE id = ?";
 			PreparedStatement preparedstatement = conexao.prepareStatement(sql);
-	        preparedstatement.setInt(1,Integer.paseInt(id));
+	        preparedstatement.setInt(1,Integer.parseInt(id));
 		    ResultSet result = preparedstatement.executeQuery();
 	    	
 	    	if(result.next()){
