@@ -17,7 +17,7 @@ public class LogoutServlet extends HttpServlet {
                     HttpServletResponse response)throws IOException, ServletException
   {
               request.getSession().invalidate();   
-              response.sendRedirect("http://localhost:8080/netflix");
+              response.sendRedirect("../");
         
        
   }
