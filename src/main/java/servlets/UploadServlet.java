@@ -93,7 +93,7 @@ public class UploadServlet extends HttpServlet {
    		String id  = request.getParameter("item");
    		try{
    			Arquivo file = ControllerArquivo.LoadById(id);
-			if(file.getExtensao().equals("jpj"){
+			if(file.getExtensao().equals("jpj")){
 				response.setContentType("image/jpeg");
 			}else{
 				response.setContentType("video/mp4");
