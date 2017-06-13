@@ -35,7 +35,7 @@ public class CadastroServlet extends HttpServlet {
 
          if(user != null){
          	   //ja existe usuario cadastrado com esse email 
-         	    response.sendRedirect("http://localhost:8080/netflix/us/cadastro.jsp?emailerro=true&email="
+         	    response.sendRedirect("/us/cadastro.jsp?emailerro=true&email="
          	    						+email
          	    						+"&username="+nome
          	    						+"&endereco="+endereco);
@@ -48,7 +48,7 @@ public class CadastroServlet extends HttpServlet {
 
 		         if(user != null){
          	  			 //ja existe usuario cadastrado com esse nome de usuario 
-         	    		response.sendRedirect("http://localhost:8080/netflix/us/cadastro.jsp?usernameerro=true&email="
+         	    		response.sendRedirect("/us/cadastro.jsp?usernameerro=true&email="
          	    						+email
          	    						+"&username="+nome
          	    						+"&endereco="+endereco);
@@ -64,7 +64,7 @@ public class CadastroServlet extends HttpServlet {
 						}
 
 				        if(result){
-				        	response.sendRedirect("http://localhost:8080/netflix/us/cadastrado.html");
+				        	response.sendRedirect("/us/cadastrado.html");
 				        }else{
 				        	//erro ao cadastrar tente novamente
 				        }
