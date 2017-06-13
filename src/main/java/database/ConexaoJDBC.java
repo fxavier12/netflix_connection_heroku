@@ -15,7 +15,7 @@ public class ConexaoJDBC {
         Properties props = new Properties();
         props.setProperty("user","cerhbpdhvcekbp");
         props.setProperty("password","a55b0317ddb4fb9128a2a3c103bcd6e6a2ec25e0b08d95dc50601f4f52fff32f");
-        props.setProperty("ssl","true")
+        props.setProperty("ssl","true");
         c = DriverManager.getConnection(url, props);
     	System.out.println("banco de dados conectado!");
         return c;
