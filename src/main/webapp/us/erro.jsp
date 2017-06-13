@@ -20,7 +20,7 @@
 			<img src="../Imagens/220px-Achtung.svg.png" alt="Sem Acesso">
 		</div>
 		<div class="botao">
-			<a class="voltar" href="javascript:window.history.go(-1)">Voltar</a>
+			<a class="voltar" href="/">Voltar</a>
 		</div>
 	</div>
 </body>
