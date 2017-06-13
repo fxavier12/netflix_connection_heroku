@@ -88,11 +88,17 @@ public class UploadServlet extends HttpServlet {
 
    	protected void doGet(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
-   		response.setContentType("image/jpeg");
+   		
    		//response.setHeader("Content-Disposition","inline");
    		String id  = request.getParameter("item");
    		try{
    			Arquivo file = ControllerArquivo.LoadById(id);
+			if(file.getExtensao().equals("jpj"){
+				response.setContentType("image/jpeg");
+			}else{
+				response.setContentType("video/mp4");
+			}
+			response.setContentType("image/jpeg");
 			byte[] fileInBytes = Base64Util.ToFile(file.getConteudo());
 			InputStream is = new ByteArrayInputStream(fileInBytes);
 	        OutputStream os = response.getOutputStream();
