@@ -35,18 +35,18 @@ public class SearchServlet extends HttpServlet {
             err.printStackTrace();
           }
           System.out.println("posts "+posts);
-          response.getWriter().println("<html><head><link rel='stylesheet'type='text/css' href='../netflix/CSS/timeline.css'/></head><body background='../netflix/Imagens/linho-cinza-textura-de-fundo_1053-253.jpg'>");
+          response.getWriter().println("<html><head><link rel='stylesheet'type='text/css' href='/CSS/timeline.css'/></head><body background='../netflix/Imagens/linho-cinza-textura-de-fundo_1053-253.jpg'>");
           response.getWriter().println("<div class='menu'><ul class='opcao'>");
-          response.getWriter().println("<li class='op1'><a href='http://localhost:8080/netflix/timeline' > Home</a></li>");
-          response.getWriter().println("<li class='op1'><a href='http://localhost:8080/netflix/us/createpost.jsp' > Novo Post</a></li>");
+          response.getWriter().println("<li class='op1'><a href='/timeline' > Home</a></li>");
+          response.getWriter().println("<li class='op1'><a href='/us/createpost.jsp' > Novo Post</a></li>");
           response.getWriter().println("<li class='op12'>Logged as "+
           request.getSession().getAttribute("usuario"));
           response.getWriter().println("<li class='op12'>");
-          response.getWriter().println("<form class='search' action='http://localhost:8080/netflix/searchposts' method='GET'>");
+          response.getWriter().println("<form class='search' action='/searchposts' method='GET'>");
           response.getWriter().println("<input type='text' name='value' size='8'></input>");
-          response.getWriter().println("<input type='image' src='http://localhost:8080/netflix/Imagens/search.png' width='25' alt='submit'></input>");
+          response.getWriter().println("<input type='image' src='/Imagens/search.png' width='25' alt='submit'></input>");
           response.getWriter().println("</form></li>");
-          response.getWriter().println("<li class='op1'><a href='http://localhost:8080/netflix/logout' >Sair</a></li>");
+          response.getWriter().println("<li class='op1'><a href='/logout' >Sair</a></li>");
           
          response.getWriter().println("</ul></div></div>");
           response.getWriter().println("<div class='head'><h1>Resultados da pesquisa </h1></div>");
@@ -57,11 +57,11 @@ public class SearchServlet extends HttpServlet {
           }else{
             for(String c : posts) {      
             response.getWriter().println("<div class='conteudo'>");
-              String tag = "<a href='http://localhost:8080/netflix/getpost?id=";
+              String tag = "<a href='/getpost?id=";
               tag +=c;
               tag += "'>Ver post completo</a>";
               tag +=" <iframe src='";
-              tag +="http://localhost:8080/netflix/getpost?id=";
+              tag +="/getpost?id=";
               tag += c;
               tag += "' scrolling='no' >";
               tag += "</iframe>";
@@ -74,11 +74,11 @@ public class SearchServlet extends HttpServlet {
           response.getWriter().println("<div class='rodape'>Dedicado ao mito X!</div>");
           response.getWriter().println("</body></html>");
       }else{
-          response.sendRedirect("http://localhost:8080/netflix/timeline");
+          response.sendRedirect("/timeline");
       }
       
     }else{
-       response.sendRedirect("http://localhost:8080/netflix/us/erro.jsp?msg=Voce%20precisa%20estar%20logado%20para%20acessar%20este%20recurso");
+       response.sendRedirect("/us/erro.jsp?msg=Voce%20precisa%20estar%20logado%20para%20acessar%20este%20recurso");
     }
   }
 
