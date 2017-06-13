@@ -48,7 +48,7 @@ public class ControllerArquivo{
 			conexao = conexaojdbc.ConectaBD();
 			String sql = "SELECT * FROM files WHERE id = ?";
 			PreparedStatement preparedstatement = conexao.prepareStatement(sql);
-	        preparedstatement.setString(1,id);
+	        preparedstatement.setInt(1,Integer.parseInt(id));
 
 		    ResultSet result = preparedstatement.executeQuery();
 	    	
